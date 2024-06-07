@@ -28,12 +28,20 @@ const CourseSchema = new mongoose.Schema({
     price: Number
 });
 
+const AdminSchema2=new mongoose.Schema({
+    title:String,
+    id:Number
+})
+
 const Admin = mongoose.model('Admin', AdminSchema);
 const User = mongoose.model('User', UserSchema);
 const Course = mongoose.model('Course', CourseSchema);
 
+
+const Admin1=mongoose.model('Admin1',AdminSchema2)
 module.exports = {
     Admin,
     User,
-    Course
+    Course,
+    Admin1
 }

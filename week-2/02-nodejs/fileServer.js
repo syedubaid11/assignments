@@ -17,5 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-
+app.get("./files/",(req,res)=>{
+  
+})
 module.exports = app;

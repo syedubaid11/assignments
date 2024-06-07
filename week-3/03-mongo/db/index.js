@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://syedabuubaid:F7sTvPpgu7kn1Xup@cluster0.ymvplll.mongodb.net/');
+mongoose.connect('mongodb+srv://syedabuubaid:F7sTvPpgu7kn1Xup@cluster0.ymvplll.mongodb.net/course_info');
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
     username:String,
-    password:String,
+    password:String, 
     purchasedCourses:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Course' 
@@ -23,6 +23,10 @@ const CourseSchema = new mongoose.Schema({
     // Schema definition here
 });
 
+const CheckSchema=new mongoose.Schema({
+
+});
+
 const Admin = mongoose.model('Admin', AdminSchema);
 const User = mongoose.model('User', UserSchema);
 const Course = mongoose.model('Course', CourseSchema);
@@ -30,5 +34,5 @@ const Course = mongoose.model('Course', CourseSchema);
 module.exports = {
     Admin,
     User,
-    Course
+    Course,
 }
